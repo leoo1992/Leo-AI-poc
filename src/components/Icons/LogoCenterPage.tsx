@@ -6,7 +6,7 @@ export default function LogoCenterPage() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-16 h-16"
+      className="w-16 h-16 hover:animate-spin p-1"
     >
       <path
         strokeLinecap="round"

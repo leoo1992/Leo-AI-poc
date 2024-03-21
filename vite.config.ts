@@ -1,7 +1,20 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+import reactRefresh from '@vitejs/plugin-react-refresh';
+import replace from '@rollup/plugin-replace';
+import dotenv from 'dotenv';
 
-// https://vitejs.dev/config/
+dotenv.config();
+
 export default defineConfig({
-  plugins: [react()],
-})
+  plugins: [
+    react(),
+    reactRefresh(),
+    replace({
+      preventAssignment: true,
+      values: {
+        'process.env.VITE_GOOGLE_API_KEY': JSON.stringify(process.env.VITE_GOOGLE_API_KEY),
+      },
+    }),
+  ],
+});
