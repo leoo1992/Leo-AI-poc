@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/react"
 import AvatarChat from "./components/Icons/AvatarChat";
 import SendIcon from "./components/Icons/SendIcon";
 import VoiceREC from "./components/Icons/VoiceREC";
@@ -57,6 +58,7 @@ function App() {
   return (
     <div className="pt-3 px-3 pb-5 h-screen flex flex-col justify-between glass opacity-100">
       <NavBar />
+      <Analytics />
       <ImgCenterPage />
       <div className="flex justify-end align-bottom items-end content-end w-12/12 h-4/6 chat chat-end">
         <div className="chat-bubble-msg chat-bubble shadow-lg hover:shadow-xl mr-2 text-accent font-semibold">
