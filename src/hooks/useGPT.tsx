@@ -11,7 +11,7 @@ export default function useGPT() {
   const genAI = new GoogleGenerativeAI(key);
 
   async function handleSubmit(event: React.KeyboardEvent<HTMLInputElement>) {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && question.trim() !== "") {
       setIsLoading(true);
       const model = genAI.getGenerativeModel({
         model: "gemini-1.0-pro-latest",
@@ -26,17 +26,20 @@ export default function useGPT() {
       setIsLoading(false);
     }
   }
+
   async function handleSubmit2() {
-    setIsLoading(true);
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-    const prompt = question;
-    const result = await model.generateContent(prompt);
-    const response = result.response;
-    const text = response.text();
-    setAnswer(text);
-    setQuestion("");
-    setIsPressed(false);
-    setIsLoading(false);
+    if (question.trim() !== "") {
+      setIsLoading(true);
+      const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+      const prompt = question;
+      const result = await model.generateContent(prompt);
+      const response = result.response;
+      const text = response.text();
+      setAnswer(text);
+      setQuestion("");
+      setIsPressed(false);
+      setIsLoading(false);
+    }
   }
 
   async function startRecording() {
@@ -64,8 +67,7 @@ export default function useGPT() {
       setIsPressed(false);
     };
     recognitionInstance.start();
-}
-
+  }
 
   function stopRecording() {
     setIsRecording(false);
