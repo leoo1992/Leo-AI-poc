@@ -47,6 +47,7 @@ export default function useGPT() {
     if (!recognition) {
       console.error("O navegador não suporta o reconhecimento de voz.");
       setIsRecording(false);
+      setIsPressed(false);
       return;
     }
     console.log("aceitou");
@@ -60,6 +61,7 @@ export default function useGPT() {
     };
     recognitionInstance.onend = () => {
       setIsRecording(false);
+      setIsPressed(false);
     };
     recognitionInstance.start();
 }
@@ -67,6 +69,8 @@ export default function useGPT() {
 
   function stopRecording() {
     setIsRecording(false);
+    setIsPressed(false);
+    handleSubmit2();
   }
 
   useEffect(() => {
