@@ -3,6 +3,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export default function useGPT() {
   const [isPressed, setIsPressed] = useState(false);
+  const [isRecording, setIsRecording] = useState(false);
   const [answer, setAnswer] = useState("");
   const [question, setQuestion] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -38,6 +39,36 @@ export default function useGPT() {
     setIsLoading(false);
   }
 
+  async function startRecording() {
+    setIsRecording(true);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-expect-error
+    const recognition = window.webkitSpeechRecognition;
+    if (!recognition) {
+      console.error("O navegador não suporta o reconhecimento de voz.");
+      setIsRecording(false);
+      return;
+    }
+    console.log("aceitou");
+
+    const recognitionInstance = new recognition();
+    recognitionInstance.lang = "pt-BR";
+    recognitionInstance.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      setQuestion(transcript);
+      stopRecording();
+    };
+    recognitionInstance.onend = () => {
+      setIsRecording(false);
+    };
+    recognitionInstance.start();
+}
+
+
+  function stopRecording() {
+    setIsRecording(false);
+  }
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (!(event.target instanceof Node)) {
@@ -59,6 +90,9 @@ export default function useGPT() {
     setIsPressed,
     setAnswer,
     setQuestion,
-    question
+    question,
+    isRecording,
+    startRecording,
+    stopRecording,
   };
 }

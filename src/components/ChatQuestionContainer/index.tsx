@@ -21,14 +21,23 @@ export default function ChatQuestionContainer({ GPT }) {
           onChange={(e) => GPT.setQuestion(e.target.value)}
         />
         <button
+          id="microphone-button"
           className={`pressable btn btn-square btn-sm shadow-lg 
             hover:shadow-xl btn-primary text-secondary
             glass rounded-xl swap ${GPT.isPressed ?? "animate-pulse"}`}
-          onClick={() => GPT.setIsPressed(!GPT.isPressed)}
+          onClick={() => {
+            if (!GPT.isRecording) {
+              GPT.startRecording();
+            } else {
+              GPT.stopRecording();
+            }
+            GPT.setIsPressed(!GPT.isPressed);
+          }}
         >
           {GPT.isPressed ? <MicrophoneOn /> : <MicrophoneOff />}
         </button>
         <button
+          id="send-button"
           className="btn btn-square btn-secondary btn-sm shadow-lg hover:shadow-xl font-extrabold 
           hover:bg-primary hover:border-0"
           onClick={() => GPT.handleSubmit2()}
