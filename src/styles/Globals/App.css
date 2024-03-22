@@ -8,5 +8,7 @@
 }
 
 .chat-bubble-msg{
-    max-height: 350px;
+    max-height: 55vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 }

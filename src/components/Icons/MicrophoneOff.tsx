@@ -1,4 +1,4 @@
-export default function VoiceREC() {
+export default function MicrophoneOff() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
