@@ -53,7 +53,6 @@ export default function useGPT() {
       setIsPressed(false);
       return;
     }
-    console.log("aceitou");
 
     const recognitionInstance = new recognition();
     recognitionInstance.lang = "pt-BR";

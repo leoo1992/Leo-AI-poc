@@ -9,6 +9,7 @@ import ChatQuestionContainer from "./components/ChatQuestionContainer";
 
 function App() {
   const GPT = useGPT();
+
   return (
     <div className="pt-3 h-screen flex flex-col justify-between glass opacity-100">
       <NavBar />
