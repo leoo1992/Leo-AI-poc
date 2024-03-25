@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import MicrophoneOff from "../Icons/MicrophoneOff";
 import MicrophoneOn from "../Icons/MicrophoneOn";
 import SendIcon from "../Icons/SendIcon";
