@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export default function useGPT() {
@@ -7,8 +7,10 @@ export default function useGPT() {
   const [answer, setAnswer] = useState("");
   const [question, setQuestion] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isFullScreen, setIsFullScreen] = useState(false);
   const key = import.meta.env.VITE_GOOGLE_API_KEY;
   const genAI = new GoogleGenerativeAI(key);
+
 
   async function handleSubmit(event: React.KeyboardEvent<HTMLInputElement>) {
     if (event.key === "Enter" && question.trim() !== "") {
@@ -74,17 +76,9 @@ export default function useGPT() {
     handleSubmit2();
   }
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!(event.target instanceof Node)) {
-        setIsPressed(false);
-      }
-    };
-    document.addEventListener("click", handleClickOutside);
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
+  const toggleFullScreen = () => {
+    setIsFullScreen((prev) => !prev);
+  };
 
   return {
     handleSubmit2,
@@ -99,5 +93,8 @@ export default function useGPT() {
     isRecording,
     startRecording,
     stopRecording,
+    isFullScreen,
+    setIsFullScreen,
+    toggleFullScreen
   };
 }

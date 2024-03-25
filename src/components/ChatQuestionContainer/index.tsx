@@ -1,8 +1,15 @@
+import React, { useEffect, useRef } from "react";
 import MicrophoneOff from "../Icons/MicrophoneOff";
 import MicrophoneOn from "../Icons/MicrophoneOn";
 import SendIcon from "../Icons/SendIcon";
 
 export default function ChatQuestionContainer({ GPT }) {
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
   return (
     <div
       className="App flex justify-center align-middle items-center 
@@ -18,6 +25,7 @@ export default function ChatQuestionContainer({ GPT }) {
        content-center gap-2 w-full lg:w-8/12 mb-1 shadow-lg hover:shadow-xl text-accent"
       >
         <input
+         ref={inputRef}
           type="text"
           className="grow"
           placeholder="Pergunte algo..."
