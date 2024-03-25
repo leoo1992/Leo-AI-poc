@@ -10,7 +10,7 @@ export default function useGPT() {
   const [isFullScreen, setIsFullScreen] = useState(false);
   const key = import.meta.env.VITE_GOOGLE_API_KEY;
   const genAI = new GoogleGenerativeAI(key);
-
+  const [isMobileLandscape, setIsMobileLandscape] = useState(false);
 
   async function handleSubmit(event: React.KeyboardEvent<HTMLInputElement>) {
     if (event.key === "Enter" && question.trim() !== "") {
@@ -95,6 +95,8 @@ export default function useGPT() {
     stopRecording,
     isFullScreen,
     setIsFullScreen,
-    toggleFullScreen
+    toggleFullScreen,
+    isMobileLandscape,
+    setIsMobileLandscape
   };
 }

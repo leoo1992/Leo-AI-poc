@@ -1,9 +1,9 @@
 import LogoCenterPage from "../Icons/LogoCenterPage";
 
-export default function ImgCenterPage({GPT}) {
+export default function ImgCenterPage({ GPT }) {
   return (
     <>
-      {!GPT.answer ? (
+      {!GPT.answer && !GPT.isMobileLandscape ? (
         <div className="flex flex-col justify-center align-middle absolute items-center opacity-30 z-0 w-full mt-40">
           <div className="rounded-full border-2 border-gray-500 p-2 animate-pulse hover:animate-spin shadow-xl">
             <LogoCenterPage />

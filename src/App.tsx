@@ -33,7 +33,24 @@ function App() {
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
-  }, [GPT, GPT.isFullScreen]);
+  }, [GPT]);
+
+  useEffect(() => {
+    const checkOrientation = () => {
+      GPT.setIsMobileLandscape(
+        typeof window !== "undefined" &&
+          window.matchMedia("(orientation: landscape)").matches &&
+          window.innerWidth <= 768 && window.innerHeight <= 520
+      );
+    };
+
+    checkOrientation();
+    window.addEventListener("resize", checkOrientation);
+
+    return () => {
+      window.removeEventListener("resize", checkOrientation);
+    };
+  }, [GPT]);
 
   return (
     <Router>
