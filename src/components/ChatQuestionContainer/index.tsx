@@ -25,9 +25,9 @@ export default function ChatQuestionContainer({ GPT }) {
        content-center gap-2 w-full lg:w-8/12 mb-1 shadow-lg hover:shadow-xl text-accent"
       >
         <input
-         ref={inputRef}
+          ref={inputRef}
           type="text"
-          className="grow"
+          className="grow text-center sm:text-left placeholder-center sm:placeholder-left"
           placeholder="Pergunte algo..."
           onKeyDown={(e) => GPT.handleSubmit(e)}
           value={GPT.question}
@@ -53,7 +53,7 @@ export default function ChatQuestionContainer({ GPT }) {
         <button
           id="send-button"
           className="btn btn-square btn-secondary btn-sm shadow-lg hover:shadow-xl font-extrabold 
-          hover:bg-primary hover:border-0"
+          hover:bg-primary hover:border-0 mr-2"
           onClick={() => GPT.handleSubmit2()}
         >
           <SendIcon />
