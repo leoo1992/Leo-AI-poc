@@ -1,10 +1,13 @@
 import { useState } from "react";
 
 export default function useREC() {
-    const [isRecording, setIsRecording] = useState(false);
+  const [isRecording, setIsRecording] = useState(false);
+  const [showSendPrompt, setShowSendPrompt] = useState(false);
 
-    async function startRecording(setIsPressed, setQuestion, handleSubmit2) {
+  async function startRecording(setIsPressed, setQuestion, handleSubmit2) {
     setIsRecording(true);
+    setShowSendPrompt(false);
+    setQuestion('');
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     //@ts-expect-error
     const recognition = window.webkitSpeechRecognition;
@@ -12,6 +15,7 @@ export default function useREC() {
       alert('O navegador não suporta o reconhecimento de voz.');
       setIsRecording(false);
       setIsPressed(false);
+      setShowSendPrompt(false);
       return;
     }
 
@@ -25,20 +29,27 @@ export default function useREC() {
     recognitionInstance.onend = () => {
       setIsRecording(false);
       setIsPressed(false);
-      handleSubmit2();
+      setShowSendPrompt(true);
+      const timer = setTimeout(() => {
+        setShowSendPrompt(false);
+      }, 3000);
+      return () => clearTimeout(timer);
     };
+    handleSubmit2();
     recognitionInstance.start();
   }
 
   function stopRecording(setIsPressed) {
     setIsRecording(false);
     setIsPressed(false);
+    setShowSendPrompt(false);
   }
 
   return {
     isRecording,
     startRecording,
     stopRecording,
-    setIsRecording
+    setIsRecording,
+    showSendPrompt
   };
 }

@@ -1,9 +1,8 @@
 import NavTitle from "./NavTitle";
-import ThemeButton from "./ThemeButton";
 import ToggleFullScreen from "./ToggleFullScreen";
+import ThemeButton from "./ThemeButton";
 
 export default function index({ GPT }) {
-
   return (
     <div className="flex justify-center align-middle items-center self-center w-11/12">
       <div className="navbar rounded-box glass bg-opacity-50 shadow-lg hover:shadow-xl p-1 m-0">

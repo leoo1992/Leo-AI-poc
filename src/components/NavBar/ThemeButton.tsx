@@ -8,7 +8,7 @@ export default function ThemeButton() {
         <button
           tabIndex={0}
           role="button"
-          className="btn btn-circle animate-pulse border border-black hover:border-gray-300"
+          className="btn btn-circle animate-pulse border border-black hover:border-gray-300 hover:animate-none"
         >
           <ThemeIcon />
         </button>

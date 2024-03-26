@@ -1,8 +1,8 @@
-import AvatarChat from "../Icons/AvatarChat";
-import "../../styles/Globals/App.css";
 import MakeAnswerTxt from "./MakeAnswerTxt";
 import WaitAnswer from "./WaitAnswer";
 import SetAnswer from "./SetAnswer";
+import AvatarChat from "../Icons/AvatarChat";
+import "../../styles/Globals/App.css";
 
 export default function ChatAnswerContainer({ GPT }) {
   return (

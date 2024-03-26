@@ -1,4 +1,3 @@
-
 export default function MakeAnswerTxt() {
     return (
         <div className="text-center">

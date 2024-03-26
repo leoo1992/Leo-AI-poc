@@ -5,7 +5,7 @@ import useSUBMIT from "./useSUBMIT";
 
 export default function useGPT() {
   const [isMobileLandscape, setIsMobileLandscape] = useState(false);
-  const { isRecording, startRecording, stopRecording } = useREC();
+  const { isRecording, startRecording, stopRecording, showSendPrompt } = useREC();
   const { isFullScreen, toggleFullScreen } = useSCREEN();
   const { handleSubmit2, handleSubmit, isPressed, answer, isLoading, setIsPressed, setAnswer, setQuestion, question } = useSUBMIT();
 
@@ -26,5 +26,6 @@ export default function useGPT() {
     toggleFullScreen,
     isMobileLandscape,
     setIsMobileLandscape,
+    showSendPrompt
   };
 }
