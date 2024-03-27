@@ -8,10 +8,10 @@ export default function index({ GPT }) {
     <div className="flex justify-center align-middle items-center self-center w-11/12">
       <div className="navbar rounded-box glass bg-opacity-50 shadow-lg hover:shadow-xl p-1 m-0">
         <NavTitle />
-        <div className="flex justify-end flex-1 p-0 m-0">
+        <div className="flex justify-end align-middle items-center self-center flex-1 p-0 m-0">
           <ToggleFullScreen GPT={GPT} />
           <ToggleLang GPT={GPT} />
-          <ThemeButton />
+          <ThemeButton GPT={GPT}/>
         </div>
       </div>
     </div>

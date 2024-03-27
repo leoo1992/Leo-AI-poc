@@ -12,6 +12,10 @@ type ENType = {
     dark: string;
     aqua: string;
     purple: string;
+    themeTooltip: string;
+    langTooltip: string;
+    fullScreenTooltip: string;
+    screenTooltip: string;
 };
 
 type PTType = {
@@ -26,6 +30,12 @@ type PTType = {
     dark: string;
     aqua: string;
     purple: string;
+    themeTooltip: string;
+    langTooltip: string;
+    fullScreenTooltip: string;
+    screenTooltip: string;
+    sendTooltip: string;
+    recTooltip: string;
 };
 
 type LangType = PTType | ENType;
@@ -34,15 +44,21 @@ export default function useLang() {
     const EN = {
         recognitionInstance: 'en',
         question: "Ask a question...",
-        waitQuestion: "Await a question...",
+        waitQuestion: "Waiting a question...",
         makeAnswer: "Make an answer...",
         help: "How can I help you?",
         recording: "Recording...",
-        sendMsg: 'Click submit',
+        sendMsg: 'Click in Submit',
         light: 'Light',
         dark: 'Dark',
         aqua: 'Blue',
         purple: 'Purple',
+        themeTooltip: 'Theme',
+        langTooltip: "Lang",
+        fullScreenTooltip: 'Full Screen',
+        screenTooltip: 'Normal Screen',
+        sendTooltip: 'Submit Question',
+        recTooltip: 'Record question'
     }
 
     const PT = {
@@ -57,6 +73,12 @@ export default function useLang() {
         dark: 'Escuro',
         aqua: 'Azul',
         purple: 'Roxo',
+        themeTooltip: 'Tema',
+        langTooltip: "Idioma",
+        fullScreenTooltip: 'Tela Cheia',
+        screenTooltip: 'Tela Normal',
+        sendTooltip: 'Enviar Pergunta',
+        recTooltip: 'Gravar Pergunta'
     }
 
     const [lang, setLang] = useState<LangType>(PT);

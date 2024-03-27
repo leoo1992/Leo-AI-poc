@@ -3,6 +3,7 @@ import MicrophoneOn from "../Icons/MicrophoneOn";
 
 export default function RecBtn({GPT}) {
     return (
+        <div className="tooltip tooltip-primary tooltip-top" data-tip={GPT.lang.recTooltip}>
         <button
             id="microphone-button"
             className={`pressable btn btn-square btn-sm shadow-lg 
@@ -19,5 +20,6 @@ export default function RecBtn({GPT}) {
         >
             {GPT.isPressed ? <MicrophoneOn /> : <MicrophoneOff />}
         </button>
+        </div>
     )
 }

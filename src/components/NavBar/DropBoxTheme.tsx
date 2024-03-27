@@ -1,4 +1,4 @@
-export default function DropBoxTheme() {
+export default function DropBoxTheme({GPT}) {
   return (
     <ul
       tabIndex={0}
@@ -9,7 +9,7 @@ export default function DropBoxTheme() {
           type="radio"
           name="theme-dropdown"
           className="theme-controller btn btn-sm btn-block btn-ghost justify-center p-1"
-          aria-label="Light"
+          aria-label={GPT.lang.light}
           value="default"
         />
       </li>
@@ -18,7 +18,7 @@ export default function DropBoxTheme() {
           type="radio"
           name="theme-dropdown"
           className="theme-controller btn btn-sm btn-block btn-ghost justify-center p-1"
-          aria-label="Dark"
+          aria-label={GPT.lang.dark}
           value="dark"
         />
       </li>
@@ -27,7 +27,7 @@ export default function DropBoxTheme() {
           type="radio"
           name="theme-dropdown"
           className="theme-controller btn btn-sm btn-block btn-ghost justify-center p-1"
-          aria-label="Aqua"
+          aria-label={GPT.lang.aqua}
           value="aqua"
         />
       </li>
@@ -36,7 +36,7 @@ export default function DropBoxTheme() {
           type="radio"
           name="theme-dropdown"
           className="theme-controller btn btn-sm btn-block btn-ghost justify-center p-1"
-          aria-label="Purple"
+          aria-label={GPT.lang.purple}
           value="synthwave"
         />
       </li>

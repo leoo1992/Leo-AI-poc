@@ -6,7 +6,7 @@ export default function ThemeIcon() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6"
+      className="w-6 h-6 flex justify-center align-middle content-center items-center self-center"
     >
       <path
         strokeLinecap="round"
