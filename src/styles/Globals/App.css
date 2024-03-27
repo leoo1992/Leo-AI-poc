@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 #root {
-    width: 100%;
-    height: 100%;
+   width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .chat-bubble-msg{
@@ -15,17 +17,26 @@
 
 canvas {
     display: block;
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
+    align-self: center !important;
   }
 
   #particles-js {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 95%;
     background-color: #8400ff00;
     background-image: url("");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
+    align-self: center !important;
   }
 
   .count-particles {
@@ -42,19 +53,44 @@ canvas {
     padding-bottom: 2px;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bold;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
+    align-self: center !important;
   }
   .js-count-particles {
     font-size: 1.0em;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
+    align-self: center !important;
   }
   #stats,
   .count-particles {
-    margin-top: 0px;
-    margin-left: 0px;
+    margin: 5px;
+    padding: 5px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
+    align-self: center !important;
   }
   #stats {
     border-radius: 3px 3px 0 0;
     overflow: hidden;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
+    align-self: center !important;
   }
   .count-particles {
     border-radius: 0 0 3px 3px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
+    align-self: center !important;
   }

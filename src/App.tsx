@@ -10,7 +10,6 @@ import Footer from "./components/Footer";
 import "./styles/Globals/App.css";
 import Particles from "./components/Particles/Particles";
 
-
 export default function App() {
   const GPT = useGPT();
   return (

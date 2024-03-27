@@ -2,6 +2,31 @@ import { useEffect } from "react";
 
 export default function AppEffects({ GPT }) {
   useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "F12") {
+        event.preventDefault();
+      }
+    }
+  
+    function handleContextMenu(event: MouseEvent) {
+      event.preventDefault();
+    }
+  
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("contextmenu", handleContextMenu);
+  
+    console.warn = () => {};
+    console.info = () => {};
+    console.error = () => {};
+    console.log = () => {};
+  
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("contextmenu", handleContextMenu);
+    };
+  }, []);
+  
+  useEffect(() => {
     const handleClickOutside = (event) => {
       if (!(event.target instanceof Node)) {
         GPT.setIsPressed(false);
