@@ -25,21 +25,21 @@ const Particles= () => {
             },
           },
           color: {
-            value: "#8a0eff",
+            value: "#be78ff",
           },
           shape: {
-            type: "triangle",
+            type: "polygon",
             stroke: {
               width: 0,
-              color: "#8a0eff",
+              color: "#be78ff",
             },
             polygon: {
               nb_sides: 5,
             },
             image: {
               src: "img/github.svg",
-              width: 100,
-              height: 100,
+              width: 10,
+              height: 10,
             },
           },
           opacity: {
@@ -65,13 +65,13 @@ const Particles= () => {
           line_linked: {
             enable: true,
             distance: 150,
-            color: "#8a0eff",
-            opacity: 0.4,
+            color: "#be78ff",
+            opacity: 0.3,
             width: 1,
           },
           move: {
             enable: true,
-            speed: 6,
+            speed: 4,
             direction: "none",
             random: true,
             straight: false,
@@ -106,7 +106,7 @@ const Particles= () => {
             },
             bubble: {
               distance: 400,
-              size: 40,
+              size: 10,
               duration: 2,
               opacity: 8,
               speed: 3,

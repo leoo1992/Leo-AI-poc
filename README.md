@@ -1,4 +1,4 @@
-# Chat GPT POC Beta
+# Léo-AI POC Beta
 
 Este projeto é um clone do Gemini do Google com reconhecimento por voz e seleção de temas. Foi desenvolvido utilizando React, TypeScript, Vite, Tailwind CSS.
 
@@ -11,7 +11,7 @@ Este projeto é um clone do Gemini do Google com reconhecimento por voz e seleç
 
 ## Deploy
 
-A aplicação está disponível no Vercel: [Chat GPT POC Beta](https://chat-gpt-poc-beta.vercel.app/)
+A aplicação está disponível no Vercel: [Léo-AI POC Beta](https://chat-gpt-poc-beta.vercel.app/)
 
 ## Como executar
 

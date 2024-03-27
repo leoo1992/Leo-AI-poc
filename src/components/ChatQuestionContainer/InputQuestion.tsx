@@ -7,7 +7,7 @@ export default function InputQuestion({ GPT, inputRef }) {
             placeholder="Pergunte algo..."
             onKeyDown={(e) => GPT.handleSubmit(e)}
             value={GPT.question}
-            onChange={(e) => GPT.setQuestion(e.target.value)}
+            onChange={(e) => GPT.setQuestion(e.currentTarget.value)}
         />
     )
 }
