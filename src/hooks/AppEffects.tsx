@@ -3,6 +3,9 @@ import { useEffect } from "react";
 export default function AppEffects({ GPT }) {
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
+      if (event.ctrlKey && event.shiftKey && (event.key === "J" || event.key === "I")) {
+        event.preventDefault();
+      }
       if (event.key === "F12") {
         event.preventDefault();
       }
@@ -25,6 +28,7 @@ export default function AppEffects({ GPT }) {
       window.removeEventListener("contextmenu", handleContextMenu);
     };
   }, []);
+  
   
   useEffect(() => {
     const handleClickOutside = (event) => {
