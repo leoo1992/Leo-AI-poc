@@ -19,8 +19,8 @@ canvas {
 
   #particles-js {
     position: absolute;
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
     background-color: #8400ff00;
     background-image: url("");
     background-repeat: no-repeat;
@@ -48,8 +48,8 @@ canvas {
   }
   #stats,
   .count-particles {
-    margin-top: 5px;
-    margin-left: 5px;
+    margin-top: 0px;
+    margin-left: 0px;
   }
   #stats {
     border-radius: 3px 3px 0 0;
