@@ -4,7 +4,7 @@ export default function useREC() {
   const [isRecording, setIsRecording] = useState(false);
   const [showSendPrompt, setShowSendPrompt] = useState(false);
 
-  async function startRecording(setIsPressed, setQuestion, handleSubmit2) {
+  async function startRecording(setIsPressed, setQuestion, handleSubmit2, recognitionLanguage) {
     setIsRecording(true);
     setShowSendPrompt(false);
     setQuestion('');
@@ -20,7 +20,7 @@ export default function useREC() {
     }
 
     const recognitionInstance = new recognition();
-    recognitionInstance.lang = "pt-BR";
+    recognitionInstance.lang = recognitionLanguage;
     recognitionInstance.onresult = (event) => {
       const transcript = event.results[0][0].transcript;
       setQuestion(transcript);

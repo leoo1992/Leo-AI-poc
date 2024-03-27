@@ -7,7 +7,7 @@ export default function ImgCenterPage({ GPT }) {
       {!GPT.answer && !GPT.isMobileLandscape ? (
         <div className="flex flex-col justify-center align-middle absolute items-center opacity-30 z-0 w-full mt-40">
           <LogoCenterPage />
-          <TextCenterPage />
+          <TextCenterPage GPT={GPT}/>
         </div>
       ) : null}
     </>
