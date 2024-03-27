@@ -29,7 +29,6 @@ export default function AppEffects({ GPT }) {
     };
   }, []);
   
-  
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (!(event.target instanceof Node)) {
