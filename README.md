@@ -6,7 +6,7 @@ Este projeto é um clone do Gemini do Google com reconhecimento por voz e seleç
 
 ## Deploy
 
-A aplicação está disponível no Vercel: [Léo-AI POC Beta](https://chat-gpt-poc-beta.vercel.app/)
+A aplicação está disponível no Vercel: [Léo-AI POC Beta](https://leo-ai-poc-beta.vercel.app/)
 
 ## Funcionalidades
 
