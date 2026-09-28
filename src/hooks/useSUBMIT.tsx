@@ -6,49 +6,41 @@ export default function useSUBMIT() {
   const [answer, setAnswer] = useState("");
   const [question, setQuestion] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const {genAI} = useAuthAPI();
+  const { endpoint } = useAuthAPI();
+
+  async function submit(promptValue = question) {
+    const prompt = promptValue.trim();
+    if (!prompt || isLoading) return;
+    setIsLoading(true);
+    setAnswer("");
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt }),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data?.error || "Não foi possível gerar a resposta.");
+      setAnswer(data.text || "Não recebi conteúdo para esta pergunta.");
+      setQuestion("");
+      setIsPressed(false);
+    } catch (error) {
+      setAnswer(error instanceof Error ? error.message : "O serviço de IA está temporariamente indisponível.");
+    } finally {
+      setIsLoading(false);
+    }
+  }
 
   async function handleSubmit(event: React.KeyboardEvent<HTMLInputElement>) {
-    if (event.key === "Enter" && question.trim() !== "") {
-      setIsLoading(true);
-      const model = genAI.getGenerativeModel({
-        model: "gemini-1.0-pro-latest",
-      });
-      const prompt = question;
-      const result = await model.generateContent(prompt);
-      const response = result.response;
-      const text = response.text();
-      setAnswer(text);
-      setQuestion("");
-      setIsPressed(false);
-      setIsLoading(false);
+    if (event.key === "Enter") {
+      event.preventDefault();
+      await submit();
     }
   }
 
-  async function handleSubmit2() {
-    if (question.trim() !== "" && question) {
-      setIsLoading(true);
-      const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-      const prompt = question;
-      const result = await model.generateContent(prompt);
-      const response = result.response;
-      const text = response.text();
-      setAnswer(text);
-      setQuestion("");
-      setIsPressed(false);
-      setIsLoading(false);
-    }
+  async function handleSubmit2(promptValue?: string) {
+    await submit(typeof promptValue === "string" ? promptValue : question);
   }
-  
-  return {
-    handleSubmit2,
-    handleSubmit,
-    isPressed,
-    answer,
-    isLoading,
-    setIsPressed,
-    setAnswer,
-    setQuestion,
-    question,
-  }
+
+  return { handleSubmit2, handleSubmit, isPressed, answer, isLoading, setIsPressed, setAnswer, setQuestion, question };
 }
