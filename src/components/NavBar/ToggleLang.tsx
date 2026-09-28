@@ -3,58 +3,21 @@ import BRflag from "../Icons/BRflag";
 import USAflag from "../Icons/USAflag";
 
 export default function ToggleLang({ GPT }) {
-    const [dropdownOpen, setDropdownOpen] = useState(false);
-
-    const handleChangeLang = (selectedLang) => {
-        GPT.handleChangeLang(selectedLang);
-        setDropdownOpen(false);
-    }
-
-    return (
-        <div id='lang-dropdown-3' className="tooltip tooltip-primary tooltip-bottom" data-tip={GPT.lang.langTooltip}>
-            <div id='lang-dropdown-2' className="flex mr-1 justify-center align-middle content-center items-center self-center">
-                <div id='lang-dropdown-1' className="dropdown dropdown-bottom flex justify-center align-middle content-center items-center self-center">
-                    <button
-                        id="lang-dropdown"
-                        tabIndex={0}
-                        role="button"
-                        className="btn btn-circle animate-pulse border border-black hover:border-gray-300 hover:animate-none"
-                        onClick={() => setDropdownOpen(!dropdownOpen)}
-                    >
-                        {GPT.lang.recognitionInstance === 'pt-BR' ?
-                            (
-                                <BRflag />
-                            ) : (
-                                <USAflag />
-                            )}
-                    </button>
-                    {dropdownOpen && (
-                        <ul
-                            id="lang-dropdown0"
-                            tabIndex={0}
-                            className="dropdown-content z-[1] p-2 m-0 mr-2 shadow-lg hover:shadow-xl bg-base-300 rounded-box w-26 border-2 border-accent"
-                        >
-                            <li>
-                                <button
-                                    name="lang-dropdown1"
-                                    className="btn btn-sm btn-primary btn-ghost justify-center p-1"
-                                    aria-label="PT"
-                                    onClick={() => handleChangeLang(GPT.PT)}
-                                >PT</button>
-                            </li>
-                            <li>
-                                <button
-                                    name="lang-dropdown2"
-                                    className="btn btn-sm btn-primary btn-ghost justify-center p-1"
-                                    aria-label="EN"
-                                    onClick={() => handleChangeLang(GPT.EN)}
-                                >EN</button>
-                            </li>
-                        </ul>
-                    )}
-                </div>
-            </div>
-        </div>
-    )
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const change = (language) => { GPT.handleChangeLang(language); setDropdownOpen(false); };
+  return (
+    <div className="tooltip tooltip-primary tooltip-bottom" data-tip={GPT.lang.langTooltip}>
+      <div className="dropdown dropdown-end">
+        <button type="button" className="btn btn-circle btn-ghost border border-base-300" aria-label={GPT.lang.langTooltip} onClick={() => setDropdownOpen(!dropdownOpen)}>
+          <span className="w-8 h-8">{GPT.lang.recognitionInstance === "pt-BR" ? <BRflag /> : <USAflag />}</span>
+        </button>
+        {dropdownOpen && (
+          <ul className="dropdown-content z-[50] mt-2 p-2 shadow-xl bg-base-200 rounded-box w-44 border border-base-300">
+            <li><button type="button" className="btn btn-sm btn-ghost btn-block justify-start gap-2" onClick={() => change(GPT.PT)}><span className="w-7 h-7"><BRflag /></span> Português</button></li>
+            <li><button type="button" className="btn btn-sm btn-ghost btn-block justify-start gap-2" onClick={() => change(GPT.EN)}><span className="w-7 h-7"><USAflag /></span> English</button></li>
+          </ul>
+        )}
+      </div>
+    </div>
+  );
 }
-
