@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{--ai-bg:#070914;--ai-bg-2:#060711;--ai-glow:rgba(132,0,255,.22);--ai-panel:rgba(17,20,39,.78);--ai-input:rgba(15,18,34,.9);--ai-line:rgba(255,255,255,.10);--ai-text:#f7f8ff;--ai-muted:#9ba3bf;--ai-shadow:var(--ai-shadow)}
+:root{--ai-bg:#070914;--ai-bg-2:#060711;--ai-glow:rgba(132,0,255,.22);--ai-panel:rgba(17,20,39,.78);--ai-input:rgba(15,18,34,.9);--ai-line:rgba(255,255,255,.10);--ai-text:#f7f8ff;--ai-muted:#9ba3bf;--ai-shadow:rgba(0,0,0,.28)}
 html[data-theme="light"]{--ai-bg:#f7f9ff;--ai-bg-2:#e8edf8;--ai-glow:rgba(79,70,229,.12);--ai-panel:rgba(255,255,255,.86);--ai-input:rgba(255,255,255,.94);--ai-line:rgba(23,32,51,.14);--ai-text:#172033;--ai-muted:#65708a;--ai-shadow:rgba(31,41,55,.12)}
-html[data-theme="dark"]{--ai-bg:#070914;--ai-bg-2:#060711;--ai-glow:rgba(132,0,255,.22);--ai-panel:rgba(17,20,39,.78);--ai-input:rgba(15,18,34,.9);--ai-line:rgba(255,255,255,.10);--ai-text:#f7f8ff;--ai-muted:#9ba3bf;--ai-shadow:var(--ai-shadow)}
+html[data-theme="dark"]{--ai-bg:#070914;--ai-bg-2:#060711;--ai-glow:rgba(132,0,255,.22);--ai-panel:rgba(17,20,39,.78);--ai-input:rgba(15,18,34,.9);--ai-line:rgba(255,255,255,.10);--ai-text:#f7f8ff;--ai-muted:#9ba3bf;--ai-shadow:rgba(0,0,0,.28)}
 html[data-theme="aqua"]{--ai-bg:#03171b;--ai-bg-2:#05272c;--ai-glow:rgba(0,220,210,.20);--ai-panel:rgba(5,42,47,.82);--ai-input:rgba(4,35,40,.92);--ai-line:rgba(91,255,244,.18);--ai-text:#eafffd;--ai-muted:#93c9c6;--ai-shadow:rgba(0,25,28,.30)}
 html[data-theme="synthwave"]{--ai-bg:#16072b;--ai-bg-2:#09051b;--ai-glow:rgba(255,47,207,.24);--ai-panel:rgba(35,13,59,.84);--ai-input:rgba(29,10,49,.94);--ai-line:rgba(255,92,222,.20);--ai-text:#fff1fc;--ai-muted:#d4a8d8;--ai-shadow:rgba(15,2,30,.34)}
 #root{width:100%;min-height:100dvh;overflow-x:hidden}
@@ -30,3 +30,5 @@ html[data-theme="light"] body{background:#f7f9ff;color:var(--ai-text)}
 html[data-theme="light"] #particles-js{opacity:.16}
 html[data-theme="light"] .navbar,html[data-theme="light"] .chat-bubble-msg,html[data-theme="light"] .leo-ai-composer label.input{color:var(--ai-text)!important}
 .leo-ai-shell,.navbar,.chat-bubble-msg,.leo-ai-composer label.input{transition:background .28s ease,color .28s ease,border-color .28s ease}
+
+.leo-ai-title{color:var(--ai-text)!important;transition:color .28s ease}
