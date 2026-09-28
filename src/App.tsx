@@ -14,14 +14,16 @@ export default function App() {
   const GPT = useGPT();
   return (
     <Router>
-      <div className="pt-3 h-screen flex flex-col justify-between">
+      <div className="leo-ai-shell">
         <Particles />
         <AppEffects GPT={GPT} />
-        <NavBar GPT={GPT} />
+        <header className="leo-ai-header"><NavBar GPT={GPT} /></header>
         <Analytics />
-        <ImgCenterPage GPT={GPT} />
-        <ChatAnswerContainer GPT={GPT} />
-        <ChatQuestionContainer GPT={GPT} />
+        <main className="leo-ai-main">
+          <ImgCenterPage GPT={GPT} />
+          <ChatAnswerContainer GPT={GPT} />
+        </main>
+        <div className="leo-ai-composer"><ChatQuestionContainer GPT={GPT} /></div>
         <Footer />
       </div>
     </Router>
