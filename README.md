@@ -1,31 +1,39 @@
-# Léo-AI POC Beta
+# Léo IA
 
-Este projeto é um clone do Gemini do Google com reconhecimento por voz e seleção de temas. Foi desenvolvido utilizando React, TypeScript, Vite, Tailwind CSS.
-
-[![Assista ao vídeo](https://cdn.loom.com/sessions/thumbnails/2885c50d19574b9896198a537294792c-with-play.gif)](https://www.loom.com/share/2885c50d19574b9896198a537294792c)
-
-## Deploy
-
-A aplicação está disponível no Vercel: [Léo-AI POC Beta](https://leo-ai-poc-beta.vercel.app/)
+Assistente conversacional responsivo desenvolvido com React, TypeScript, Vite, Tailwind CSS e DaisyUI. O projeto inclui entrada por texto e voz, português/inglês, temas persistentes, modo tela cheia e integração server-side com Google Gemini.
 
 ## Funcionalidades
+- Chat com IA via endpoint server-side `/api/chat`
+- Segredo da API mantido fora do bundle do navegador
+- Português e inglês com bandeiras no seletor
+- Temas Claro, Escuro, Azul e Roxo com persistência
+- Reconhecimento de voz quando suportado pelo navegador
+- Layout responsivo para desktop, tablet, celular e landscape
+- Tratamento de erro da API sem spinner infinito
+- Vercel Analytics
 
-- Reconhecimento por voz
-- Seleção de temas
-- Interface propria com botões interativos
-
-## Como executar
-
+## Desenvolvimento
 ```bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/seu-repositorio.git
-
-# Entre no diretório do projeto
-cd seu-repositorio
-
-# Instale as dependências
 npm install
-
-# Execute a aplicação
 npm run dev
+```
 
+Crie `.env.local` a partir de `.env.example` e defina `GOOGLE_API_KEY`. Em produção, configure a mesma variável no projeto da Vercel.
+
+## Qualidade
+```bash
+npm test
+npm run lint
+npm run build
+```
+
+O GitHub Actions executa testes, lint e build em pushes e pull requests.
+
+## Deploy
+A aplicação é preparada para Vercel. O endpoint em `api/chat.js` é executado como função server-side.
+
+## Segurança
+Não versione chaves de API. Variáveis com prefixo `VITE_` são públicas no bundle e não devem conter segredos.
+
+## Licença
+MIT.
