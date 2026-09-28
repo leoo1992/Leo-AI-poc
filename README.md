@@ -1,9 +1,9 @@
 # Léo IA
 
-Assistente conversacional responsivo desenvolvido com React, TypeScript, Vite, Tailwind CSS e DaisyUI. O projeto inclui entrada por texto e voz, português/inglês, temas persistentes, modo tela cheia e integração server-side com Google Gemini.
+Assistente conversacional responsivo desenvolvido com React, TypeScript, Vite, Tailwind CSS e DaisyUI. O projeto inclui entrada por texto e voz, português/inglês, temas persistentes, modo tela cheia e integração server-side com Google Gemini 3.8 Flash pela Interactions API.
 
 ## Funcionalidades
-- Chat com IA via endpoint server-side `/api/chat`
+- Chat com IA via endpoint server-side `/api/chat` usando Gemini 3.8 Flash e Interactions API
 - Segredo da API mantido fora do bundle do navegador
 - Português e inglês com bandeiras no seletor
 - Temas Claro, Escuro, Azul e Roxo com persistência
