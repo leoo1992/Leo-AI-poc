@@ -1,3 +1,4 @@
+import type { GPTProps } from "../../types/gpt";
 import { useEffect, useRef } from "react";
 import RecMsg from "./RecMsg";
 import InputQuestion from "./InputQuestion";
@@ -5,11 +6,11 @@ import RecBtn from "./RecBtn";
 import SendBtn from "./SendBtn";
 import SendMsg from "./SendMsg";
 
-export default function ChatQuestionContainer({ GPT }) {
-  const inputRef = useRef(null);
+export default function ChatQuestionContainer({ GPT }: GPTProps) {
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    inputRef.current.focus();
+    inputRef.current?.focus();
   }, []);
 
   return (
