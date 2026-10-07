@@ -1,3 +1,4 @@
+import type { GPTProps } from "../../types/gpt";
 const themes = [
   { value: "light", label: "light" },
   { value: "dark", label: "dark" },
@@ -5,7 +6,7 @@ const themes = [
   { value: "synthwave", label: "purple" },
 ];
 
-export default function DropBoxTheme({ GPT }) {
+export default function DropBoxTheme({ GPT }: GPTProps) {
   const selectTheme = (value: string) => {
     document.documentElement.setAttribute("data-theme", value);
     localStorage.setItem("leo-ai-theme", value);
