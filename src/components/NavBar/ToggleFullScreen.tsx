@@ -1,7 +1,8 @@
+import type { GPTProps } from "../../types/gpt";
 import NotFullScreen from "../Icons/NotFullScreen";
 import FullScreen from "../Icons/FullScreen";
 
-export default function ToggleFullScreen({ GPT }) {
+export default function ToggleFullScreen({ GPT }: GPTProps) {
     return (
         <div className="tooltip tooltip-primary tooltip-bottom" data-tip={GPT.isFullScreen ? GPT.lang.screenTooltip : GPT.lang.fullScreenTooltip}>
             <div className="flex justify-center align-middle content-center items-center self-center">

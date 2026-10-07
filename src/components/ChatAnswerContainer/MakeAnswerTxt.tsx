@@ -1,4 +1,5 @@
-export default function MakeAnswerTxt({ GPT }) {
+import type { GPTProps } from "../../types/gpt";
+export default function MakeAnswerTxt({ GPT }: GPTProps) {
     return (
         <div className="text-center">
             <span className="loading loading-ring loading-md text-secondary"></span>

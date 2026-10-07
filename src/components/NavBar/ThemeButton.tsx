@@ -1,7 +1,8 @@
+import type { GPTProps } from "../../types/gpt";
 import ThemeIcon from "../Icons/ThemeIcon";
 import DropBoxTheme from "./DropBoxTheme";
 
-export default function ThemeButton({ GPT }) {
+export default function ThemeButton({ GPT }: GPTProps) {
   return (
     <div className="tooltip tooltip-primary tooltip-bottom" data-tip={GPT.lang.themeTooltip}>
       <div className="flex justify-center align-middle content-center items-center self-center">

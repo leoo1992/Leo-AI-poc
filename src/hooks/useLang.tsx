@@ -1,24 +1,6 @@
 import { useState } from "react"
 
-type ENType = {
-    recognitionInstance: string;
-    question: string;
-    waitQuestion: string;
-    makeAnswer: string;
-    help: string;
-    recording: string;
-    sendMsg: string;
-    light: string;
-    dark: string;
-    aqua: string;
-    purple: string;
-    themeTooltip: string;
-    langTooltip: string;
-    fullScreenTooltip: string;
-    screenTooltip: string;
-};
-
-type PTType = {
+export type LangType = {
     recognitionInstance: string;
     question: string;
     waitQuestion: string;
@@ -38,10 +20,8 @@ type PTType = {
     recTooltip: string;
 };
 
-type LangType = PTType | ENType;
-
 export default function useLang() {
-    const EN = {
+    const EN: LangType = {
         recognitionInstance: 'en',
         question: "Ask a question...",
         waitQuestion: "Waiting a question...",
@@ -61,7 +41,7 @@ export default function useLang() {
         recTooltip: 'Record question'
     }
 
-    const PT = {
+    const PT: LangType = {
         recognitionInstance: 'pt-BR',
         question: "Pergunte algo...",
         waitQuestion: "Aguardando uma pergunta...",
@@ -87,11 +67,5 @@ export default function useLang() {
         setLang(selectedLang);
     }
 
-    return {
-        lang,
-        setLang,
-        EN,
-        PT,
-        handleChangeLang
-    }
+    return { lang, setLang, EN, PT, handleChangeLang }
 }

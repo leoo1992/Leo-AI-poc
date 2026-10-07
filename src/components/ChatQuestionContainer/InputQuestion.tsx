@@ -1,4 +1,6 @@
-export default function InputQuestion({ GPT, inputRef }) {
+import type { RefObject } from "react";
+import type { GPTProps } from "../../types/gpt";
+export default function InputQuestion({ GPT, inputRef }: GPTProps & { inputRef: RefObject<HTMLInputElement> }) {
     return (
         <input
             ref={inputRef}

@@ -1,10 +1,11 @@
+import type { GPTProps } from "../../types/gpt";
 import { useState } from "react";
 import BRflag from "../Icons/BRflag";
 import USAflag from "../Icons/USAflag";
 
-export default function ToggleLang({ GPT }) {
+export default function ToggleLang({ GPT }: GPTProps) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const change = (language) => { GPT.handleChangeLang(language); setDropdownOpen(false); };
+  const change = (language: GPTProps["GPT"]["lang"]) => { GPT.handleChangeLang(language); setDropdownOpen(false); };
   return (
     <div className="tooltip tooltip-primary tooltip-bottom" data-tip={GPT.lang.langTooltip}>
       <div className="dropdown dropdown-end">

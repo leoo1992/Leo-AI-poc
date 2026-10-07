@@ -2,7 +2,7 @@ import { useState } from "react";
 import useREC from "./useREC";
 import useSCREEN from "./useSCREEN";
 import useSUBMIT from "./useSUBMIT";
-import useLang from "./useLang";
+import useLang, { type LangType } from "./useLang";
 
 export default function useGPT() {
   const [isMobileLandscape, setIsMobileLandscape] = useState(false);
@@ -23,7 +23,7 @@ export default function useGPT() {
     question,
     isRecording,
     startRecording: () => startRecording(setIsPressed, setQuestion, handleSubmit2, lang.recognitionInstance),
-    stopRecording,
+    stopRecording: () => stopRecording(setIsPressed),
     isFullScreen,
     toggleFullScreen,
     isMobileLandscape,
@@ -33,6 +33,6 @@ export default function useGPT() {
     setLang,
     EN,
     PT,
-    handleChangeLang: (selectedLang) => setLang(selectedLang),
+    handleChangeLang: (selectedLang: LangType) => setLang(selectedLang),
   };
 }

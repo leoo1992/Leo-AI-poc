@@ -1,6 +1,7 @@
+import type { GPTProps } from "../../types/gpt";
 import SendIcon from "../Icons/SendIcon";
 
-export default function SendBtn({GPT}) {
+export default function SendBtn({ GPT }: GPTProps) {
   return (
     <div className="tooltip tooltip-primary tooltip-left" data-tip={GPT.lang.sendTooltip}>
     <button

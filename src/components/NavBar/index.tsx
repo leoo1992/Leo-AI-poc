@@ -1,9 +1,10 @@
+import type { GPTProps } from "../../types/gpt";
 import NavTitle from "./NavTitle";
 import ToggleFullScreen from "./ToggleFullScreen";
 import ThemeButton from "./ThemeButton";
 import ToggleLang from "./ToggleLang";
 
-export default function index({ GPT }) {
+export default function index({ GPT }: GPTProps) {
   return (
     <div className="flex justify-center align-middle items-center self-center w-11/12">
       <div className="navbar rounded-box glass bg-opacity-50 shadow-lg hover:shadow-xl p-1 m-0">

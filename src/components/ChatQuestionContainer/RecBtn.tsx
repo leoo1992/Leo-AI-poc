@@ -1,7 +1,8 @@
+import type { GPTProps } from "../../types/gpt";
 import MicrophoneOff from "../Icons/MicrophoneOff";
 import MicrophoneOn from "../Icons/MicrophoneOn";
 
-export default function RecBtn({GPT}) {
+export default function RecBtn({ GPT }: GPTProps) {
     return (
         <div className="tooltip tooltip-primary tooltip-top" data-tip={GPT.lang.recTooltip}>
         <button

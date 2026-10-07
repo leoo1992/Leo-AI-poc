@@ -1,7 +1,8 @@
+import type { GPTProps } from "../../types/gpt";
 import LogoCenterPage from "../Icons/LogoCenterPage";
 import TextCenterPage from "./TextCenterPage";
 
-export default function ImgCenterPage({ GPT }) {
+export default function ImgCenterPage({ GPT }: GPTProps) {
   return (
     <>
       {!GPT.answer && !GPT.isMobileLandscape ? (
