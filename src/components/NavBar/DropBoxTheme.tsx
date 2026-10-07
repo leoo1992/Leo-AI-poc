@@ -1,5 +1,6 @@
 import type { GPTProps } from "../../types/gpt";
-const themes = [
+import type { LangType } from "../../hooks/useLang";
+const themes: Array<{ value: string; label: keyof LangType }> = [
   { value: "light", label: "light" },
   { value: "dark", label: "dark" },
   { value: "aqua", label: "aqua" },
