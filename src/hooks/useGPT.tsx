@@ -23,7 +23,7 @@ export default function useGPT() {
     question,
     isRecording,
     startRecording: () => startRecording(setIsPressed, setQuestion, handleSubmit2, lang.recognitionInstance),
-    stopRecording,
+    stopRecording: () => stopRecording(setIsPressed),
     isFullScreen,
     toggleFullScreen,
     isMobileLandscape,
