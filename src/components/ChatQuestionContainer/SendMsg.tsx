@@ -1,4 +1,5 @@
-export default function SendMsg({GPT}) {
+import type { GPTProps } from "../../types/gpt";
+export default function SendMsg({ GPT }: GPTProps) {
   return (
     <span className="bg-neutral text-accent text-center font-extrabold p-3 rounded-lg border-secondary border-2">
     {GPT.lang.sendMsg}
