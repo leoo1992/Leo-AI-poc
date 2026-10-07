@@ -1,6 +1,7 @@
+import type { GPTProps } from "../types/gpt";
 import { useEffect } from "react";
 
-export default function AppEffects({ GPT }) {
+export default function AppEffects({ GPT }: GPTProps) {
   const { isFullScreen, setIsMobileLandscape } = GPT;
   useEffect(() => {
     const saved = localStorage.getItem("leo-ai-theme");
